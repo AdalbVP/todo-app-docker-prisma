@@ -1,4 +1,4 @@
-#Todo App - Node.js + Prisma + PostgreSQL + Docker
+# Todo App - Node.js + Prisma + PostgreSQL + Docker
 
 This project implements a **Task Management RESTful API (CRUD)** using **Express**, **PostgreSQL** as the relational 
 database, and **Prisma ORM** as the data access layer.
@@ -15,7 +15,9 @@ The entire application is **Containerized with Docker and Docker Compose**, maki
 
 ---
 
-##Project Structure
+## Project Structure
+````
+backend-todo-app/
 │
 ├── public/
 │   └── index.html              # The frontend HTML file for authentication and todo management
@@ -39,39 +41,40 @@ The entire application is **Containerized with Docker and Docker Compose**, maki
 ├── package.json                 # Project dependencies and scripts
 ├── package-lock.json            # Lockfile for exact dependency versions
 └── todo-app.rest                # REST client file for emulating API requests
-
+````
 ---
 
-##Setup & Installation
+## Setup & Installation
 
-###1. Clone the repository
-``bash
+### 1. Clone the repository
+```
+bash
 git clone https://github.com/AdalbVP/todo-app-docker-prisma.git
 cd todo-app-docker-prisma
-
-###2. Generate Prisma Client
+```
+### 2. Generate Prisma Client
 npx prisma generate
 
-###3. Build your docker images
+### 3. Build your docker images
 docker compose build
 
-###4. Create PostgreSQL migrations and apply them 
+### 4. Create PostgreSQL migrations and apply them 
 docker compose run app npx prisma migrate dev --name init
 
-###5. Boot up docker containers 
+### 5. Boot up docker containers 
 docker compose up
 
-###6. To login docker PosgreSQL database
+### 6. To login docker PosgreSQL database
 docker exec -it postgres-db psql -U postgres -d todoapp
 
-###7. To stop docker containers
+### 7. To stop docker containers
 docker compose down
 
-###8. Access the app 
+### 8. Access the app 
 Open http://localhost:5003 in your browser
 
 ---
 
-##License 
+## License 
 This project is for educational purposes and part of my backend development practice.
 It is based on ideas and concepts from James MCArthur's course, adapted and implemented for my portfolio.
